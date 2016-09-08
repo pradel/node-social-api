@@ -1,0 +1,11 @@
+# npm
+node_modules
+
+# build
+lib
+
+# coverage
+coverage
+
+# documentation
+docs
