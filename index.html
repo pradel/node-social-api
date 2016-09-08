@@ -104,6 +104,12 @@
                         .delete
                       </a></li>
                     
+                      <li><a
+                        href='#Instagramstream'
+                        class='regular pre-open'>
+                        .stream
+                      </a></li>
+                    
                     </ul>
                   
                   
@@ -117,6 +123,39 @@
                       </a></li>
                       
                     </ul>
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#instagramstream'
+                  class=" toggle-sibling">
+                  InstagramStream
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#InstagramStreamstart'
+                        class='regular pre-open'>
+                        .start
+                      </a></li>
+                    
+                      <li><a
+                        href='#InstagramStreamstop'
+                        class='regular pre-open'>
+                        .stop
+                      </a></li>
+                    
+                    </ul>
+                  
                   
                   
                 </div>
@@ -692,6 +731,13 @@ facebook.get(<span class="hljs-string">'some-facebook-id'</span>).then((data) =&
 
 instagram.get(<span class="hljs-string">'some-instagram-route'</span>).then((data) =&gt; {
  <span class="hljs-built_in">console</span>.log(data);
+});
+
+<span class="hljs-comment">// Streaming can be used on all endpoints taking MIN_TAG_ID as parameter</span>
+<span class="hljs-keyword">const</span> stream = instagram.stream(<span class="hljs-string">'tags/:tag-name/media/recent'</span>);
+
+stream.on(<span class="hljs-string">'message'</span>, (message) =&gt; {
+ <span class="hljs-built_in">console</span>.log(message);
 });</pre>
     
   
@@ -943,6 +989,79 @@ instagram.get(<span class="hljs-string">'some-instagram-route'</span>).then((dat
       </div>
     </div>
   
+    <div class='border-bottom' id='Instagramstream'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>stream(url, [options])</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Create a new instagram stream.<br />
+Streaming can be used on all endpoints taking MIN_TAG_ID as parameter.</p>
+
+
+  <div class='pre p1 fill-light mt0'>stream(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, options: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>]): <a href="#instagramstream">InstagramStream</a></div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>])</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#instagramstream">InstagramStream</a></code>:
+        A new instagram stream.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
 </div>
 
   
@@ -1048,6 +1167,169 @@ instagram.get(<span class="hljs-string">'some-instagram-route'</span>).then((dat
     </div>
   
 </div>
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='instagramstream'>
+      InstagramStream
+    </h3>
+    
+  </div>
+  
+
+  <p>InstagramStream class</p>
+
+
+  <div class='pre p1 fill-light mt0'>new InstagramStream()</div>
+
+  
+    <p>
+      Extends
+      
+        EventEmitter
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Streaming can be used on all endpoints taking MIN_TAG_ID as parameter</span>
+<span class="hljs-keyword">const</span> stream = instagram.stream(<span class="hljs-string">'tags/:tag-name/media/recent'</span>);
+
+stream.on(<span class="hljs-string">'message'</span>, (message) =&gt; {
+ <span class="hljs-built_in">console</span>.log(message);
+});
+<span class="hljs-comment">// handle stream error</span>
+stream.on(<span class="hljs-string">'error'</span>, (err) =&gt; {
+ <span class="hljs-comment">// An error occur</span>
+ <span class="hljs-built_in">console</span>.log(err);
+});</pre>
+    
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='InstagramStreamstart'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>start()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Start the stream.</p>
+
+
+  <div class='pre p1 fill-light mt0'>start()</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='InstagramStreamstop'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>stop()</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Stop the stream.</p>
+
+
+  <div class='pre p1 fill-light mt0'>stop()</div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
 
   
 
