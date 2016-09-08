@@ -11,3 +11,4 @@ rm -rf node-social-api
 git add .
 git commit --message '$version'
 git push origin gh-pages
+git checkout master
