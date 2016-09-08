@@ -9,6 +9,6 @@ version=$(node -p "require('./node-social-api/package.json').version" 2>/dev/nul
   (echo "Cannot read package version" >&2 ; exit 1)
 rm -rf node-social-api
 git add .
-git commit --message '$version'
+git commit --message $version
 git push origin gh-pages
 git checkout master
