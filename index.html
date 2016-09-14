@@ -182,33 +182,10 @@
                 
                 <li><a
                   href='#instagramstream'
-                  class=" toggle-sibling">
+                  class="">
                   InstagramStream
-                  <span class='icon'>▸</span>
+                  
                 </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
-                      <li><a
-                        href='#InstagramStreamstart'
-                        class='regular pre-open'>
-                        .start
-                      </a></li>
-                    
-                      <li><a
-                        href='#InstagramStreamstop'
-                        class='regular pre-open'>
-                        .stop
-                      </a></li>
-                    
-                    </ul>
-                  
-                  
-                  
-                </div>
                 
                 </li>
               
@@ -237,6 +214,12 @@
                         .post
                       </a></li>
                     
+                      <li><a
+                        href='#Tumblrstream'
+                        class='regular pre-open'>
+                        .stream
+                      </a></li>
+                    
                     </ul>
                   
                   
@@ -253,6 +236,16 @@
                   
                   
                 </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#tumblrstream'
+                  class="">
+                  TumblrStream
+                  
+                </a>
                 
                 </li>
               
@@ -1094,6 +1087,13 @@ github.get(<span class="hljs-string">'some-github-route'</span>).then((data) =&g
 </span></td>
                 </tr>
               
+                <tr>
+                  <td class='break-word'><span class='code bold'>config.userAgent</span> <code class='quiet'>[<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>]</code>
+                  </td>
+                  <td class='break-word'><span>User-Agent header for requests.
+</span></td>
+                </tr>
+              
             </tbody>
           </table>
           
@@ -1653,7 +1653,7 @@ Streaming can be used on all endpoints taking MIN_TAG_ID as parameter.</p>
     <p>
       Extends
       
-        EventEmitter
+        <a href="https://nodejs.org/api/stream.html">Stream</a>
       
     </p>
   
@@ -1690,102 +1690,6 @@ stream.on(<span class="hljs-string">'error'</span>, (err) =&gt; {
 });</pre>
     
   
-
-  
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='InstagramStreamstart'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>start()</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>Start the stream.</p>
-
-
-  <div class='pre p1 fill-light mt0'>start()</div>
-
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='InstagramStreamstop'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>stop()</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>Stop the stream.</p>
-
-
-  <div class='pre p1 fill-light mt0'>stop()</div>
-
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
 
   
 
@@ -2016,6 +1920,78 @@ tumblr.get(<span class="hljs-string">'some-tumblr-route'</span>).then((data) =&g
       </div>
     </div>
   
+    <div class='border-bottom' id='Tumblrstream'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>stream(url, [options])</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>Create a new tumblr stream.<br /></p>
+
+
+  <div class='pre p1 fill-light mt0'>stream(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, options: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>]): <a href="#tumblrstream">TumblrStream</a></div>
+
+  
+
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>url</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code> 
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>([<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>])</code> 
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#tumblrstream">TumblrStream</a></code>:
+        A new tumblr stream.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
 </div>
 
   
@@ -2114,6 +2090,73 @@ tumblr.get(<span class="hljs-string">'some-tumblr-route'</span>).then((data) =&g
     </div>
   
 </div>
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    <h3 class='fl m0' id='tumblrstream'>
+      TumblrStream
+    </h3>
+    
+  </div>
+  
+
+  <p>TumblrStream class</p>
+
+
+  <div class='pre p1 fill-light mt0'>new TumblrStream()</div>
+
+  
+    <p>
+      Extends
+      
+        <a href="https://nodejs.org/api/stream.html">Stream</a>
+      
+    </p>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> stream = tumblr.stream(<span class="hljs-string">'blog/:blog-identifier/posts'</span>);
+
+stream.on(<span class="hljs-string">'message'</span>, (message) =&gt; {
+ <span class="hljs-built_in">console</span>.log(message);
+});
+
+<span class="hljs-comment">// handle stream error</span>
+stream.on(<span class="hljs-string">'error'</span>, (err) =&gt; {
+ <span class="hljs-comment">// An error occur</span>
+ <span class="hljs-built_in">console</span>.log(err);
+});</pre>
+    
+  
+
+  
 
   
 
