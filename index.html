@@ -181,16 +181,6 @@
               
                 
                 <li><a
-                  href='#instagramstream'
-                  class="">
-                  InstagramStream
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#tumblr'
                   class=" toggle-sibling">
                   Tumblr
@@ -236,16 +226,6 @@
                   
                   
                 </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#tumblrstream'
-                  class="">
-                  TumblrStream
-                  
-                </a>
                 
                 </li>
               
@@ -1462,7 +1442,7 @@ stream.on(<span class="hljs-string">'message'</span>, (message) =&gt; {
 Streaming can be used on all endpoints taking MIN_TAG_ID as parameter.</p>
 
 
-  <div class='pre p1 fill-light mt0'>stream(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, options: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>]): <a href="#instagramstream">InstagramStream</a></div>
+  <div class='pre p1 fill-light mt0'>stream(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, options: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>]): InstagramStream</div>
 
   
 
@@ -1498,7 +1478,7 @@ Streaming can be used on all endpoints taking MIN_TAG_ID as parameter.</p>
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="#instagramstream">InstagramStream</a></code>:
+      <code>InstagramStream</code>:
         A new instagram stream.
 
       
@@ -1624,74 +1604,6 @@ Streaming can be used on all endpoints taking MIN_TAG_ID as parameter.</p>
     </div>
   
 </div>
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    <h3 class='fl m0' id='instagramstream'>
-      InstagramStream
-    </h3>
-    
-  </div>
-  
-
-  <p>InstagramStream class</p>
-
-
-  <div class='pre p1 fill-light mt0'>new InstagramStream()</div>
-
-  
-    <p>
-      Extends
-      
-        <a href="https://nodejs.org/api/stream.html">Stream</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// Streaming can be used on all endpoints taking MIN_TAG_ID as parameter</span>
-<span class="hljs-keyword">const</span> stream = instagram.stream(<span class="hljs-string">'tags/:tag-name/media/recent'</span>);
-
-stream.on(<span class="hljs-string">'message'</span>, (message) =&gt; {
- <span class="hljs-built_in">console</span>.log(message);
-});
-
-<span class="hljs-comment">// handle stream error</span>
-stream.on(<span class="hljs-string">'error'</span>, (err) =&gt; {
- <span class="hljs-comment">// An error occur</span>
- <span class="hljs-built_in">console</span>.log(err);
-});</pre>
-    
-  
-
-  
 
   
 
@@ -1935,7 +1847,7 @@ tumblr.get(<span class="hljs-string">'some-tumblr-route'</span>).then((data) =&g
   <p>Create a new tumblr stream.<br /></p>
 
 
-  <div class='pre p1 fill-light mt0'>stream(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, options: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>]): <a href="#tumblrstream">TumblrStream</a></div>
+  <div class='pre p1 fill-light mt0'>stream(url: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, options: [<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>]): TumblrStream</div>
 
   
 
@@ -1971,7 +1883,7 @@ tumblr.get(<span class="hljs-string">'some-tumblr-route'</span>).then((data) =&g
   
     
       <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="#tumblrstream">TumblrStream</a></code>:
+      <code>TumblrStream</code>:
         A new tumblr stream.
 
       
@@ -2090,73 +2002,6 @@ tumblr.get(<span class="hljs-string">'some-tumblr-route'</span>).then((data) =&g
     </div>
   
 </div>
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    <h3 class='fl m0' id='tumblrstream'>
-      TumblrStream
-    </h3>
-    
-  </div>
-  
-
-  <p>TumblrStream class</p>
-
-
-  <div class='pre p1 fill-light mt0'>new TumblrStream()</div>
-
-  
-    <p>
-      Extends
-      
-        <a href="https://nodejs.org/api/stream.html">Stream</a>
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">const</span> stream = tumblr.stream(<span class="hljs-string">'blog/:blog-identifier/posts'</span>);
-
-stream.on(<span class="hljs-string">'message'</span>, (message) =&gt; {
- <span class="hljs-built_in">console</span>.log(message);
-});
-
-<span class="hljs-comment">// handle stream error</span>
-stream.on(<span class="hljs-string">'error'</span>, (err) =&gt; {
- <span class="hljs-comment">// An error occur</span>
- <span class="hljs-built_in">console</span>.log(err);
-});</pre>
-    
-  
-
-  
 
   
 
